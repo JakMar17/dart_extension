@@ -3,7 +3,7 @@
  * @template K - The type of the map's keys.
  * @template V - The type of the map's values.
  */
-extension DartExtensionMapExtension<K, V> on Map<K, V> {
+extension DartUtilBoxMapExtension<K, V> on Map<K, V> {
   /**
    * Returns a new map containing all entries that satisfy the given test.
    *

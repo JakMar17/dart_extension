@@ -10,7 +10,7 @@ Add this to your projects's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  dart_extension: ^1.0.0
+  dart_util_box: ^1.0.0
 ```
 
 Then run: 
@@ -21,7 +21,7 @@ dart pub get
 Import it in you code:
 
 ```dart 
-import 'package:dart_extension/dart_extension.dart';
+import 'package:dart_util_box/dart_util_box.dart';
 ```
 
 ## 📅 DateTime Extensions

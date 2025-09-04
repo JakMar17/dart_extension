@@ -1,7 +1,7 @@
 /**
  * Extension methods for the DateTime class to provide additional date and time utilities.
  */
-extension DartExtensionDateTimeExtension on DateTime {
+extension DartUtilBoxDateTimeExtension on DateTime {
   /// Returns a new DateTime representing the start of the day (00:00:00).
   DateTime get startOfDay => DateTime(year, month, day);
 

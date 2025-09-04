@@ -3,7 +3,7 @@
  *
  * Provides additional utility methods for working with Lists.
  */
-extension DartExtensionListExtension<T> on List<T> {
+extension DartUtilBoxListExtension<T> on List<T> {
   /**
    * Adds an element to the list if the specified condition is met.
    *

@@ -3,7 +3,7 @@ import "dart:math";
 /**
  * Extension methods for nullable double values.
  */
-extension DartExtensionDoubleExtension on double? {
+extension DartUtilBoxDoubleExtension on double? {
   /**
    * Returns the value of this double if it is not null or zero, otherwise returns 1.
    *
@@ -22,7 +22,7 @@ extension DartExtensionDoubleExtension on double? {
 /**
  * Extension methods for nullable num values.
  */
-extension DartExtensionNumNullableExtension on num? {
+extension DartUtilBoxNumNullableExtension on num? {
   /**
    * Returns the value of this num if it is not null or zero, otherwise returns 1.
    *
@@ -36,7 +36,7 @@ extension DartExtensionNumNullableExtension on num? {
 /**
  * Extension methods for non-nullable num values.
  */
-extension DartExtensionNumExtension on num {
+extension DartUtilBoxNumExtension on num {
   /**
    * Returns the order of magnitude of the number.
    *

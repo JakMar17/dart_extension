@@ -3,7 +3,7 @@
  *
  * Provides additional utility methods for working with Iterables.
  */
-extension DartExtensionIterableExtension<T> on Iterable<T> {
+extension DartUtilBoxIterableExtension<T> on Iterable<T> {
   /**
    * Maps each element of the iterable to a new value and returns the result as a list.
    *

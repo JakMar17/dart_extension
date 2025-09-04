@@ -1,7 +1,7 @@
 /**
  * Extension methods for the String class to provide additional utilities.
  */
-extension DartExtensionStringExtension on String {
+extension DartUtilBoxStringExtension on String {
   /**
    * Returns a copy of the string with the first character in uppercase.
    * If the string is empty, this will throw an error.
