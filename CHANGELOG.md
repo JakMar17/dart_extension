@@ -21,6 +21,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Other
 
+## 1.0.2
+
+### Added
+- added `Iterable::distinct` and `Iterable::distinctWhere`
+
+### Changed
+- changed SDK constraint
+
 ## 1.0.0
 
 ### Added

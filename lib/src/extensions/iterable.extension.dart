@@ -184,4 +184,33 @@ extension DartUtilBoxIterableExtension<T> on Iterable<T> {
    */
   List<T> whereNotToList(bool Function(T element) test) =>
       whereNot(test).toList();
+
+  /**
+   * Returns a new iterable with duplicate elements removed, preserving the order of first occurrences.
+   */
+  Iterable<T> distinct() sync* {
+    final seen = <T>{};
+    for (final element in this) {
+      if (seen.add(element)) {
+        yield element;
+      }
+    }
+  }
+
+  /**
+   * Returns a new iterable with duplicate elements removed based on a custom equality function,
+   * preserving the order of first occurrences.
+   *
+   * @param equals A function that determines whether two elements are considered equal.
+   * @return An iterable containing distinct elements based on the provided equality function.
+   */
+  Iterable<T> distinctWhere(bool Function(T element) equals) sync* {
+    final seen = <T>[];
+    for (final element in this) {
+      if (!seen.any(equals)) {
+        seen.add(element);
+        yield element;
+      }
+    }
+  }
 }

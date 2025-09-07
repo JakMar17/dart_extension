@@ -1,13 +1,13 @@
 name: dart_util_box
 description: Dart utility and extension library.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/JakMar17/dart_extension
 
 maintainers:
   - Jakob Marusic
 
 environment:
-  sdk: ^3.9.0
+  sdk: '>=3.4.0 <4.0.0'
 
 # Add regular dependencies here.
 dependencies:

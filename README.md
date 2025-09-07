@@ -111,6 +111,10 @@ It makes **mapping, filtering, replacing, and peeking** easier and more expressi
 - `lastOrNull` → safely get last element or `null` if empty
 - `replaceWhere` → replace elements that satisfy a condition
 
+**Distinct**
+- `distinct` → get unique elements based on object equality
+- `distinctWhere` → get unique elements based on a key selector function
+
 ---
 
 #### 🧑‍💻 Examples
@@ -154,6 +158,20 @@ void main() {
 
   print(numbers.replaceWhere((n) => n == 30, (_) => 99).toList()); 
   // [10, 20, 99, 40]
+  
+    // Distinct
+    final items = [1, 2, 2, 3, 4, 4, 5];
+    print(items.distinct().toList());
+    // [1, 2, 3, 4, 5]
+  
+    final people = [
+      {'name': 'Alice', 'age': 30},
+      {'name': 'Bob', 'age': 25},
+      {'name': 'Alice', 'age': 28},
+    ];
+    final uniqueByName = people.distinctWhere((person) => person['name']);
+    print(uniqueByName.toList());
+    // [{'name': 'Alice', 'age': 30}, {'name': 'Bob', 'age': 25}
 }
 ```
 
