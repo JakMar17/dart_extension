@@ -110,6 +110,7 @@ It makes **mapping, filtering, replacing, and peeking** easier and more expressi
 - `peek` → run side-effects (like logging) while iterating
 - `lastOrNull` → safely get last element or `null` if empty
 - `replaceWhere` → replace elements that satisfy a condition
+- `count` → count elements satisfying a condition
 
 **Distinct**
 - `distinct` → get unique elements based on object equality
@@ -123,47 +124,50 @@ It makes **mapping, filtering, replacing, and peeking** easier and more expressi
 import 'package:your_package/your_package.dart';
 
 void main() {
-  final numbers = [10, 20, 30, 40];
-
-  // Mapping
-  print(numbers.mapToList((n) => n * 2)); 
-  // [20, 40, 60, 80]
-
-  print(numbers.mapIndexedToList((i, n) => '$i:$n')); 
-  // ['0:10', '1:20', '2:30', '3:40']
-
-  print(numbers.mapWithFirstLast(({
+    final numbers = [10, 20, 30, 40];
+    
+    // Mapping
+    print(numbers.mapToList((n) => n * 2)); 
+    // [20, 40, 60, 80]
+    
+    print(numbers.mapIndexedToList((i, n) => '$i:$n')); 
+    // ['0:10', '1:20', '2:30', '3:40']
+    
+    print(numbers.mapWithFirstLast(({
     required element,
     required isFirst,
     required isLast,
-  }) => '$element (${isFirst ? "first" : isLast ? "last" : "mid"})'));
-  // ['10 (first)', '20 (mid)', '30 (mid)', '40 (last)']
-
-  // Filtering
-  print(numbers.whereToList((n) => n > 20)); 
-  // [30, 40]
-
-  print(numbers.whereIndexed((i, n) => i.isEven)); 
-  // (10, 30)
-
-  print(numbers.whereNotToList((n) => n == 20)); 
-  // [10, 30, 40]
-
-  // Utility
-  numbers.peek((n) => print("Saw $n")).toList();
-  // Logs: Saw 10, Saw 20, Saw 30, Saw 40
-
-  print(numbers.lastOrNull()); 
-  // 40
-
-  print(numbers.replaceWhere((n) => n == 30, (_) => 99).toList()); 
-  // [10, 20, 99, 40]
+    }) => '$element (${isFirst ? "first" : isLast ? "last" : "mid"})'));
+    // ['10 (first)', '20 (mid)', '30 (mid)', '40 (last)']
+    
+    // Filtering
+    print(numbers.whereToList((n) => n > 20)); 
+    // [30, 40]
+    
+    print(numbers.whereIndexed((i, n) => i.isEven)); 
+    // (10, 30)
+    
+    print(numbers.whereNotToList((n) => n == 20)); 
+    // [10, 30, 40]
+    
+    // Utility
+    numbers.peek((n) => print("Saw $n")).toList();
+    // Logs: Saw 10, Saw 20, Saw 30, Saw 40
+    
+    print(numbers.lastOrNull()); 
+    // 40
+    
+    print(numbers.replaceWhere((n) => n == 30, (_) => 99).toList()); 
+    // [10, 20, 99, 40]
   
+    print(numbers.count((n) => n >= 20));
+    // 3
+
     // Distinct
     final items = [1, 2, 2, 3, 4, 4, 5];
     print(items.distinct().toList());
     // [1, 2, 3, 4, 5]
-  
+    
     final people = [
       {'name': 'Alice', 'age': 30},
       {'name': 'Bob', 'age': 25},

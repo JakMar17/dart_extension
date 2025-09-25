@@ -50,8 +50,7 @@ extension DartUtilBoxIterableExtension<T> on Iterable<T> {
       required T element,
       required bool isFirst,
       required bool isLast,
-    })
-    mappingFn,
+    }) mappingFn,
   ) sync* {
     for (int i = 0; i < length; i++) {
       yield mappingFn(
@@ -75,8 +74,7 @@ extension DartUtilBoxIterableExtension<T> on Iterable<T> {
       required T element,
       required bool isFirst,
       required bool isLast,
-    })
-    mappingFn,
+    }) mappingFn,
   ) sync* {
     for (int i = 0; i < length; i++) {
       yield mappingFn(
@@ -213,4 +211,12 @@ extension DartUtilBoxIterableExtension<T> on Iterable<T> {
       }
     }
   }
+
+  /**
+   * Counts the number of elements in the iterable that satisfy a given test.
+   *
+   * @param test A function that determines whether an element should be counted.
+   * @return The number of elements that satisfy the test.
+   */
+  int count(bool Function(T element) test) => where(test).length;
 }
