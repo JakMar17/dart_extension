@@ -21,6 +21,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Other
 
+## 1.0.4
+
+### Changed
+- changed ``Iterable::lastOrNull`` to getter (BREAKING CHANGE)
+
 ## 1.0.3
 
 ### Added
