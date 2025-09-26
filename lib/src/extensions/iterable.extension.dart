@@ -134,11 +134,11 @@ extension DartUtilBoxIterableExtension<T> on Iterable<T> {
   }
 
   /**
-   * Returns the last element of the iterable, or null if the iterable is empty.
+   * Returns the first element of the iterable, or null if the iterable is empty.
    *
-   * @return The last element of the iterable, or null if the iterable is empty.
+   * @return The first element or null.
    */
-  T? lastOrNull() => isNotEmpty ? last : null;
+  T? get lastOrNull => isNotEmpty ? last : null;
 
   /**
    * Replaces elements in the iterable that satisfy a given test with a new value.
